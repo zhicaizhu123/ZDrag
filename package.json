@@ -1,12 +1,30 @@
 {
   "name": "z-drag",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "description": "the component of drag by vue",
+  "main": "lib/z-drag.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name z-drag --dest lib packages/index.js",
     "lint": "vue-cli-service lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhicaizhu123/ZDrag.git"
+  },
+  "keywords": [
+    "drag",
+    "draggable",
+    "vue",
+    "拖拽排序",
+    "拖拽"
+  ],
+  "author": {
+    "name": "Peter Chu",
+    "email": "zhicaizhu123@126.com"
+  },
+  "license": "ISC",
   "dependencies": {
     "core-js": "^3.4.3",
     "vue": "^2.6.10"
