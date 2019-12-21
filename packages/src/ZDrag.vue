@@ -1,6 +1,9 @@
 <template>
   <div class="z-drag">
-    <transition-group name="flip" tag="div">
+    <transition-group
+      name="flip"
+      tag="div"
+    >
       <div
         v-for="item in list"
         :key="item[sortId]"
@@ -65,7 +68,7 @@ export default {
     // 元素样式
     itemStyle: {
       type: Object,
-      default: () => {}
+      default: () => { }
     },
 
     // 被拖动元素类样式
@@ -77,7 +80,7 @@ export default {
     // 被拖动元素样式
     ghostStyle: {
       type: Object,
-      default: () => {}
+      default: () => { }
     },
 
     // 拖动到元素上方的样式
@@ -86,13 +89,14 @@ export default {
       default: 'z-drag-item__over'
     },
 
+    // 禁止被拖动元素的样式
     disabledClass: {
       type: String,
       default: 'z-drag-item__disabled'
     }
   },
 
-  data() {
+  data () {
     return {
       currentEl: null, // 当前拖动DOM元素
       src: {},
@@ -103,26 +107,26 @@ export default {
   },
 
   watch: {
-    value(val) {
+    value (val) {
       this.list = [...val]
     }
   },
 
-  created() {
+  created () {
     // 使用节流方式，防止操作频繁
     this.onChange = throttle(this.dataChange, 210, false)
   },
 
   methods: {
     // 设置拖拽到目标元素的样式
-    toggleTargetElStyle(e, status) {
+    toggleTargetElStyle (e, status) {
       status
         ? e.classList.add(this.dragOverClass)
         : e.classList.remove(this.dragOverClass)
     },
 
     // 开始拖拽被拖拽元素
-    onDragStart(e, src) {
+    onDragStart (e, src) {
       if (src.disabled) {
         e.preventDefault()
         return
@@ -133,7 +137,7 @@ export default {
     },
 
     // 拖拽结束
-    onDragEnd() {
+    onDragEnd () {
       this.draging = false
       if (JSON.stringify(this.list) !== JSON.stringify(this.value)) {
         this.$emit('input', this.list)
@@ -142,7 +146,7 @@ export default {
     },
 
     // 数据互换
-    replaceHandler(srcIndex, targetIndex) {
+    replaceHandler (srcIndex, targetIndex) {
       const list = [...this.list]
       list[srcIndex] = this.target
       list[targetIndex] = this.src
@@ -150,7 +154,7 @@ export default {
     },
 
     // 数据插入到目标元素位置
-    sortHanlder(srcIndex, targetIndex) {
+    sortHanlder (srcIndex, targetIndex) {
       const list = [...this.list]
       const src = list.splice(srcIndex, 1)
       list.splice(targetIndex, 0, ...src)
@@ -158,7 +162,7 @@ export default {
     },
 
     // 触发数据变化
-    dataChange(e, target) {
+    dataChange (e, target) {
       // 数据监听时，当前元素可能为null
       if (!e.currentTarget) return
       this.target = { ...target }
@@ -174,7 +178,7 @@ export default {
     },
 
     // 拖拽到元素上面
-    onDragOver(e, data) {
+    onDragOver (e, data) {
       e.preventDefault()
       if (e.currentTarget && e.currentTarget !== this.currentEl) {
         if (this.immediate) {
@@ -186,7 +190,7 @@ export default {
     },
 
     // 离开目标元素
-    onDragLeave(e) {
+    onDragLeave (e) {
       if (
         !this.immediate &&
         e.currentTarget &&
@@ -197,7 +201,7 @@ export default {
     },
 
     // 在目标元素释放元素
-    onDrop(e, target) {
+    onDrop (e, target) {
       e.preventDefault()
       this.dataChange(e, target)
       this.toggleTargetElStyle(e.currentTarget, false)

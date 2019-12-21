@@ -8,7 +8,7 @@
       @change="onChange"
     >
       <div slot-scope="scope">
-        {{scope.data.label}}
+        {{ scope.data.label }}
       </div>
     </z-drag>
   </div>
@@ -21,14 +21,14 @@ import ZDrag from '../packages/src/ZDrag'
 
 export default {
   components: {
-    ZDrag,
+    ZDrag
   },
   data () {
     return {
       list: [
         {
           id: 1,
-          label: '选项1',
+          label: '选项1'
         },
         {
           id: 2,
@@ -37,18 +37,35 @@ export default {
         {
           id: 3,
           label: '选项3',
+          disabled: true
         },
         {
           id: 4,
-          label: '选项4',
+          label: '选项4'
         },
         {
           id: 5,
-          label: '选项5',
+          label: '选项5'
         },
         {
           id: 6,
-          label: '选项6',
+          label: '选项6'
+        },
+        {
+          id: 7,
+          label: '选项7'
+        },
+        {
+          id: 8,
+          label: '选项8'
+        },
+        {
+          id: 9,
+          label: '选项9'
+        },
+        {
+          id: 10,
+          label: '选项10'
         }
       ]
     }
