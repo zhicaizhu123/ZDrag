@@ -35,16 +35,16 @@ components: {
 
 ### 属性
 
-|     属性      |                                        描述                                         |      类型      |                    默认值 |
-| :-----------: | :---------------------------------------------------------------------------------: | :------------: | ------------------------: |
-|    sortId     |                                 每个元素的唯一标识                                  | String（必传） |                         - |
-|    isSort     | 是否拖拽排序，true-被拖拽元素插入到目标元素位置，false-被拖拽元素与目标元素位置互换 |    Boolean     |                      true |
-|   immediate   |                                拖拽是否立即改变排序                                 |    Boolean     |                      true |
-|   itemClass   |                                   每个元素类样式                                    |     String     |             'z-drag-item' |
-|   itemStyle   |                                  每个元素内敛样式                                   |     Object     |                        {} |
-|  ghostClass   |                                  被拖拽元素类样式                                   |     String     |    'z-drag-item\_\_ghost' |
-|  ghostStyle   |                                 被拖拽元素内敛样式                                  |     Object     |                        {} |
-| dragOverClass |                              拖拽到元素上方的元素样式                               |     String     |     'z-drag-item\_\_over' |
+|     属性      |                                        描述                                         |      类型      |          默认值           |
+| :-----------: | :---------------------------------------------------------------------------------: | :------------: | :-----------------------: |
+|    sortId     |                                 每个元素的唯一标识                                  | String（必传） |             -             |
+|    isSort     | 是否拖拽排序，true-被拖拽元素插入到目标元素位置，false-被拖拽元素与目标元素位置互换 |    Boolean     |           true            |
+|   immediate   |                                拖拽是否立即改变排序                                 |    Boolean     |           true            |
+|   itemClass   |                                   每个元素类样式                                    |     String     |       'z-drag-item'       |
+|   itemStyle   |                                  每个元素内敛样式                                   |     Object     |            {}             |
+|  ghostClass   |                                  被拖拽元素类样式                                   |     String     |  'z-drag-item\_\_ghost'   |
+|  ghostStyle   |                                 被拖拽元素内敛样式                                  |     Object     |            {}             |
+| dragOverClass |                              拖拽到元素上方的元素样式                               |     String     |   'z-drag-item\_\_over'   |
 | disabledClass |                                禁止被拖动元素的样式                                 |     String     | 'z-drag-item\_\_disabled' |
 
 ### 事件
